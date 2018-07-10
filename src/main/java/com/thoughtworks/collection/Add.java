@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
@@ -48,7 +49,8 @@ public class Add {
     }
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return arrayList.stream().reduce(
+                0, (accumulator, current) -> current % 2 == 1 ? accumulator + current * 3 + 5 : accumulator);
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
