@@ -17,7 +17,7 @@ public class InverseReduce {
         this.random = random;
     }
 
-    // TODO: 2018-07-10 是否有更好的方法？ 
+    // TODO: 2018-07-10 是否有更好的方法？
     public List<Integer> divideToSmaller(int number) {
         List<Integer> resultList = new ArrayList<>();
         int num = number - random.nextInt(3);

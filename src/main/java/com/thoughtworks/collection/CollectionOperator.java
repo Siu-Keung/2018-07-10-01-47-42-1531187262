@@ -42,6 +42,7 @@ public class CollectionOperator {
                 .collect(Collectors.toList());
     }
 
+    // TODO: 2018-07-10 此处方法是否正确？
     public List<Integer> addUncommonElement(Integer[] firstArray, Integer[] secondArray) {
         List<Integer> firstList = Arrays.asList(firstArray).stream().collect(Collectors.toList());
         List<Integer> secondList = Arrays.asList(secondArray).stream().collect(Collectors.toList());
