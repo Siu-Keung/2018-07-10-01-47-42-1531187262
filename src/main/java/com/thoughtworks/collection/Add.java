@@ -54,8 +54,12 @@ public class Add {
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
-//        arrayList.stream().flatMap()
-        return 1;
+        List<Integer> resultList = arrayList.stream()
+                .filter(item -> item % 2 == 0).sorted((x, y) -> x - y).collect(Collectors.toList());
+        double result = resultList.get(resultList.size() / 2);
+        if(resultList.size() % 2 != 1)
+            result = (resultList.get(resultList.size() / 2) + resultList.get(resultList.size() / 2 - 1)) / 2.0;
+        return result;
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
