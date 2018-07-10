@@ -54,7 +54,8 @@ public class Add {
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
+//        arrayList.stream().flatMap()
+        return 1;
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
@@ -73,7 +74,12 @@ public class Add {
         throw new NotImplementedException();
     }
 
+    // TODO: 2018-07-10 这题是否有更优解决方案？
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> resultList = new ArrayList<>();
+        for(int i = 1; i < arrayList.size(); i++){
+            resultList.add((arrayList.get(i - 1) + arrayList.get(i)) * 3);
+        }
+        return resultList;
     }
 }
