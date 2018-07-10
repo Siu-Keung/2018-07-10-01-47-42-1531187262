@@ -78,7 +78,16 @@ public class Add {
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> evenList = arrayList.stream()
+                .filter(item -> item % 2 == 0)
+                .sorted((x, y) -> x - y)
+                .collect(Collectors.toList());
+        List<Integer> oddList = arrayList.stream()
+                .filter(item -> item % 2 == 1)
+                .sorted((x, y) -> y - x)
+                .collect(Collectors.toList());
+        evenList.addAll(oddList);
+        return evenList;
     }
 
     // TODO: 2018-07-10 这题是否有更优解决方案？
