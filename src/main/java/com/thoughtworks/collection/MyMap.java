@@ -22,7 +22,7 @@ public class MyMap {
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+        return array.stream().map(item -> String.valueOf((char)(item.intValue() + 96))).collect(Collectors.toList());
     }
 
     public List<String> mapLetters() {
