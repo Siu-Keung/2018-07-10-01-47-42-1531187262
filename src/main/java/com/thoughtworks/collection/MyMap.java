@@ -26,7 +26,18 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        return this.array.stream().map(item -> {
+           int num = item;
+           String tempResult = "";
+           while(num != 0){
+               int countResult = num % 26;
+               char ch = countResult != 0 ? (char)(96 + countResult) : 'z';
+               num = num % 26 == 0 ? num / 26  -1 : num / 26;
+               tempResult += ch;
+           }
+           return new StringBuffer(tempResult).reverse().toString();
+        }).collect(Collectors.toList());
+
     }
 
     public List<Integer> sortFromBig() {
