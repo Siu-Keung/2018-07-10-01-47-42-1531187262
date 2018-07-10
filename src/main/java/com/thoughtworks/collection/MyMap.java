@@ -25,6 +25,7 @@ public class MyMap {
         return array.stream().map(item -> String.valueOf((char)(item.intValue() + 96))).collect(Collectors.toList());
     }
 
+    // TODO: 2018-07-10  更好的方法？
     public List<String> mapLetters() {
         return this.array.stream().map(item -> {
            int num = item;
@@ -41,10 +42,10 @@ public class MyMap {
     }
 
     public List<Integer> sortFromBig() {
-        throw new NotImplementedException();
+        return this.array.stream().sorted((x, y) -> y - x).collect(Collectors.toList());
     }
 
     public List<Integer> sortFromSmall() {
-        throw new NotImplementedException();
+        return this.array.stream().sorted((x, y) -> x - y).collect(Collectors.toList());
     }
 }
